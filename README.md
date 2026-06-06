@@ -2,7 +2,6 @@
 
 > *"Empowering social networks and users to distinguish truth from misinformation."*
 
-![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Model](https://img.shields.io/badge/Model-Passive_Aggressive_Classifier-blue)
 ![Backend](https://img.shields.io/badge/Backend-Flask-lightgrey)
 ![Accuracy](https://img.shields.io/badge/Accuracy-96%25-success)
