@@ -1,114 +1,46 @@
-# Fake News Detection using Machine Learning
+# 📰 Fake News Detection System
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Problem Definition](#problem-definition)
-- [Project Structure](#project-structure)
-- [Datasets](#datasets)
-- [Model Name](#model-name)
-- [Images](#images)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
+> *"Empowering social networks and users to distinguish truth from misinformation."*
 
-## Introduction
-This repository contains a comprehensive project for detecting fake news using machine learning techniques and various natural language processing techniques. The project includes data analysis, model training, and a web application for real-time fake news detection. The machine learning model is designed to classify news articles as either real or fake based on their content.
+![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Model](https://img.shields.io/badge/Model-Passive_Aggressive_Classifier-blue)
+![Backend](https://img.shields.io/badge/Backend-Flask-lightgrey)
+![Accuracy](https://img.shields.io/badge/Accuracy-96%25-success)
 
-## Problem Definition
-We aim to develop a machine learning program to identify when a news source may be producing fake news. The model will focus on identifying fake news sources, based on multiple articles originating from a source. Once a source is labeled as a producer of fake news, we can predict with high confidence that any future articles from that source will also be fake news. Focusing on sources widens our article misclassification tolerance, because we will have multiple data points coming from each source.
+## 📖 Overview
+This project is a comprehensive machine learning web application designed to detect fake news in real-time. By utilizing natural language processing (NLP) and a continuously updating classification model, the system analyzes the content of news articles to classify them as either reliable or unreliable. 
 
-The intended application of the project is for use in applying visibility weights in social media. Using weights produced by this model, social networks can make stories that are highly likely to be fake news less visible.
-
-## Project Structure
-The repository is organized into the following directories and files:
-- **Images**: Contains important project images, such as block diagrams, classification reports, confusion matrices, and screenshots.
-- **dataset**: Includes the dataset, consisting of train and test data from Kaggle, which is used to train and test the model.
-- **static**: Houses static assets for the web application, including CSS, JavaScript, etc.
-- **templates**: Includes HTML templates for the web application, such as `Landingpage.html` and `prediction page.html`.
-- **Fake_News_Detector-PA.ipynb**: Jupyter Notebook file for data analysis and model training.
-- **app.py**: Flask web application for real-time fake news detection.
-- **model.pkl**: Pre-trained machine learning model for fake news detection.
-- **vector.pkl**: Pre-trained vectorizer for text data.
-
-## Datasets 
-### train.csv
-A full training dataset with the following attributes:
-- `id`: unique id for a news article
-- `title`: the title of a news article
-- `author`: author of the news article
-- `text`: the text of the article; could be incomplete
-- `label`: a label that marks the article as potentially unreliable
-  - `1`: unreliable
-  - `0`: reliable
-
-### test.csv
-A testing training dataset with all the same attributes as `train.csv` without the label.
-
-## Model Name
-The machine learning model used for fake news detection in this project is the **Passive Aggressive Classifier**.
-
-### Model Description
-The Passive Aggressive Classifier (PAC) is a type of online learning algorithm for binary classification tasks. It is well-suited for applications like fake news detection. The PAC algorithm updates its model continuously as new data arrives, making it efficient for real-time classification.
-
-### Model Accuracy
-The Passive Aggressive Classifier achieved an impressive accuracy of **96%** during evaluation. This high accuracy indicates its effectiveness in classifying news articles as reliable or unreliable.
-
-The model is pre-trained and available as `model.pkl` in this repository, allowing you to use it for making predictions.
-
-Feel free to explore the Jupyter Notebook (`Fake_News_Detector-PA.ipynb`) for more details about the model's training and performance.
-
-## Images
-This section provides visuals and diagrams used in the project:
-- Block Diagram
-![Block Diagram](Images/BlockDiagram.jpg)
-
-- Process Flow Diagram
-![Process Flow Diagram](Images/Processflow.jpg)
-
-- Confusion Matrix
-![Confusion Matrix](Images/ConfusionMatrix.jpg)
-
-## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- Python 3.7 or higher
-- Install all dependencies from the requirements.txt file.
-
-## Getting Started
-To get started with this project, follow these steps:
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/abiek12/Fake-News-Detection-using-MachineLearning.git
-   ```
-
-2. Create a virtual environment (optional but recommended):
-   ```bash
-   python -m venv my_env
-   ```
-
-3. Activate the virtual environment:
-   ```bash
-   # On Windows
-   .\my_env\Scripts\Activate.ps1
-   # On macOS and Linux
-   source my_env/bin/activate
-   ```
-
-4. Install project dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-5. Run the web application:
-   ```bash
-   python app.py
-   ```
-
-Access the application in your web browser by navigating to `http://localhost:5000`.
+The intended application is to provide visibility weights for social media platforms, allowing them to confidently identify and reduce the spread of stories from recurring fake news sources.
 
 ---
 
-**Author**
-- ABHISHEK P P (https://github.com/abiek12)
+## 🧠 Core Features & Mechanics
 
-- If you have any questions or need further assistance, feel free to contact us at abhishekkanichery@gmail.com
+### ⚡ 1. Real-Time Online Learning
+* **Continuous Updates:** The system utilizes a **Passive Aggressive Classifier (PAC)**, which continuously updates its model as new data arrives.
+* **High Efficiency:** This online learning algorithm makes the model highly efficient and exceptionally well-suited for real-time fake news detection.
+* **Proven Performance:** The PAC model achieved a 96% accuracy rate during evaluation.
+
+### 🛡️ 2. Source-Based Misclassification Tolerance
+* **Strategic Focus:** Rather than solely analyzing isolated articles, the system focuses on identifying fake news *sources* by analyzing multiple articles originating from them.
+* **High Confidence Predicting:** Once a source is flagged, the model can predict future fake articles from that producer with high confidence, safely widening the system's misclassification tolerance.
+
+### 🌐 3. Interactive Web Interface
+* **Instant Validation:** Users can input news headlines directly into a responsive web interface to uncover the truth and validate authenticity instantly.
+* **Seamless Integration:** Built on **Flask**, the application seamlessly bridges the Python machine learning logic with an interactive HTML/CSS frontend.
 
 ---
+
+## 📊 Datasets
+The model is trained and tested on comprehensive data from Kaggle:
+* **train.csv:** Contains full attributes for training, including `id`, `title`, `author`, `text`, and a binary `label` (1 for unreliable, 0 for reliable).
+* **test.csv:** Contains identical attributes for testing purposes, excluding the reliable/unreliable label.
+
+---
+
+## 🛠️ Tech Stack
+* **Frontend:** HTML, CSS (Outfit & Roboto fonts)
+* **Backend:** Python, Flask
+* **Machine Learning:** Scikit-Learn (PassiveAggressiveClassifier, TfidfVectorizer)
+* **Natural Language Processing:** NLTK (WordNetLemmatizer, Stopwords)
+* **Data Processing:** Pandas, NumPy, Regular Expressions (re)
